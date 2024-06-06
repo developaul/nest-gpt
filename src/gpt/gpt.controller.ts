@@ -46,7 +46,6 @@ export class GptController {
 
     for await (const chunk of stream) {
       const piece = chunk.choices[0].delta.content ?? '';
-      console.log('🚀 ~ GptController ~ forawait ~ piece:', piece);
       res.write(piece);
     }
 
